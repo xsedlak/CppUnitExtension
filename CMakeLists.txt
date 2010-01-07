@@ -1,5 +1,6 @@
 cmake_minimum_required (VERSION 2.6)
-project (CppUnitExtension)
+project (CPPUNITEXTENSION)
+set(CMAKE_CXX_FLAGS "-g -Wall")
 add_subdirectory (Extension)
 add_subdirectory (CppUnit)
 add_subdirectory (Example)
