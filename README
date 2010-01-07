@@ -1,1 +1,40 @@
-Thu Jan  7 12:10:28 CET 2010
+The project should work on linux.
+
+
+Notes on intentions (see wiki for more):
+  CppUnit/
+    - copy of cppunit sources (todo: note version)
+    - only relevant files from cppunit-1.12.1 are copied there
+  CppUnitExtension/
+    - sources of developed extension
+  Example/
+    - how to use cppunit with the extension
+
+
+Start with project:
+1) create your own ssh keys
+2) create an account on github.com and provide your account with your public ssh key
+   (let me know about your account name, I'll add you as a collaborator)
+3) run 'git clone git@github.com:mb78/CppUnitExtension.git; cd CppUnitExtension', you are in dev. directory
+4) run 'cmake .; make', you have project compiled and can 'cd Example && ./CppUnitExtensionExample'
+
+
+Your work should comprise:
+1) do not make project not compilable
+2) comment anything that you've changed on project's wiki or anything that makes sense
+3) as editor you can use 'vim'
+
+
+Basic git commands:
+1) git pull                  # to get new version from 'master' branch (no other branch will be used)
+2) git push                  # to push your changes to 'master' branch
+3) git add xyz.cpp           # to add new or changed xyz.cpp to the project
+4) git rm xyz.cpp            # to remove xyz.cpp from the project
+5) git commit -m "A comment" # commit your changes locally (use 'git push' then)
+
+
+TODO:
+  - let CppUnit/include/cppunit/config-auto.h be auto-created (now it's
+    generated on kubuntu 9.10, might not match your env)
+
+# vim: ts=4 sw=4 et tw=0
