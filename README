@@ -31,6 +31,7 @@ Basic git commands:
 3) git add xyz.cpp           # to add new or changed xyz.cpp to the project
 4) git rm xyz.cpp            # to remove xyz.cpp from the project
 5) git commit -m "A comment" # commit your changes locally (use 'git push' then)
+6) git -f -x                 # clean working directory from files not in repository
 
 
 TODO:

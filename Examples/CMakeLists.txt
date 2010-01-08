@@ -1,1 +1,2 @@
-add_subdirectory (Example1-ClassicCppUnitTest Example2-CppUnitTestWithExtension)
+add_subdirectory (Example1-ClassicCppUnitTest)
+add_subdirectory (Example2-CppUnitTestWithExtension)
