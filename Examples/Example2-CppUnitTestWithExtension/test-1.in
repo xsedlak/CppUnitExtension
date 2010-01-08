@@ -1,0 +1,6 @@
+$ECHO Starting test 1
+
+$SYSTEM
+$STRING date
+
+$ECHO Test 1 ends
