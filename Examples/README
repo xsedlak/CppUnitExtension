@@ -1,0 +1,3 @@
+The directory contains two examples (separated in subdirs Example1* and Example2):
+- Example1-ClassicCppUnitTest: how to use cppunit without extension
+- Example2-CppUnitTestWithExtension: how to use the developed extension, you can compare it with Example1
