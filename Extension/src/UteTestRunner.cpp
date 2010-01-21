@@ -1,6 +1,9 @@
 #include "UteTestRunner.h"
 #include "Reader.h"
 #include <errno.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdarg.h>
 
 using namespace std;
 
@@ -31,7 +34,7 @@ namespace ute {
 	/******************************************************************************/
 	//!Simulated time
 	/******************************************************************************/
-	static struct timeval simulated_time;
+	static struct ::timeval simulated_time;
 
 	void UteTestRunner::utr_increase_sim_time(int delta_sec, int delta_u_sec)
 	{
@@ -39,7 +42,7 @@ namespace ute {
 		simulated_time.tv_usec += delta_u_sec;
 	}
 
-	const struct timeval* UteTestRunner::utr_get_simulated_time(void)
+	const struct ::timeval* UteTestRunner::utr_get_simulated_time(void)
 	{
 		return &simulated_time;
 	}
@@ -65,11 +68,11 @@ namespace ute {
 	UteTestRunner* UteTestRunner::m_instance = 0;
 
 	UteTestRunner::UteTestRunner():
-		m_event_number(0),
-		m_finish(0),
 		m_inputfile(0),
 		m_outputfile(0),
-		m_redirect_stdout(stdout)
+		m_redirect_stdout(stdout),
+		m_event_number(0),
+		m_finish(0)
 	{
 		m_instance = this;
 	}
