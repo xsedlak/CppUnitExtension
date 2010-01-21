@@ -6,7 +6,7 @@
 #include <map>
 #include <stdio.h>
 
-namespace cppunitmsext {
+namespace ute {
 
 #ifdef DEBUG_READER
 #define R_DEBUG_ENTER(file, function) \
@@ -46,64 +46,14 @@ const int TFR_BUFFER_SIZE=65535;
 
 enum commands {
 	CM_NO_COMMAND=0,
-	CM_REPEAT,
-	CM_INFO,
-	CM_COMMENT,
 	CM_ECHO,
-	CM_ECHO_TRC,
 	CM_CALL,
-	CM_ORDER,
-	CM_ORDER_KEEP_ENTRY,
-	CM_ORDER_KEEP,
-	CM_ORDER_DELETE_LAST,
-	CM_ORDER_DELETE_ALL,
-	CM_IFDEF,
-	CM_IFNDEF,
-	CM_ELSE,
-	CM_ENDIF,
-	CM_INDEX,
-	CM_INDEX_INC,
-	CM_INDEX_RESET,
 	CM_INT,
 	CM_STRING,
-	CM_STRING_HEX,
-	CM_TIMER_TYPE,
 	CM_BOOL,
-	CM_SKIP_START,
-	CM_SKIP_END,
-	CM_INCLUDE,
-	CM_MARK,
 	CM_SLEEP,
-	CM_STRING_ARRAY,
-	CM_BATCH_END,
-	CM_BATCH_SIM,
-	CM_BATCH_SIM_END,
 	CM_SLEEP_SIM,
-	CM_DEFINE,
 	CM_EXEC,
-	CM_CLASS,
-	CM_GET_VALUE,
-	CM_NEM_NOTIFICATION,
-	CM_NEM_NOTIFICATION_SIMPLE,
-	CM_EVENT_NOTIFICATION,
-	CM_EVENT_COMMUNICATION_BACKUP_STATUS,
-	CM_EVENT_LOW_PRIO_TASK,
-	CM_EVENT_MESSAGE_TYPE,
-	CM_NEMLIB_CHANGE_CONFIG,
-	CM_NEMLIB_CHANGE_CONFIG_END,
-	CM_ADD_PARAM,
-	CM_CHANGE_PARAM,
-	CM_DEL_PARAM,
-	CM_DEL_TABLE,
-	CM_CHANGE_TABLE,
-	CM_ADD_TABLE,
-	CM_CHANGE_STORED_VALUE,
-	CM_OVL_LCL_CTX_UPDATE,
-	CM_OVL_VOL_CTX_READ,
-	CM_OVL_GET_LOAD_INFO,
-	CM_PERSISTENCE_COMMIT,
-	CM_PERSISTENCE_ROLLBACK,
-	CM_PERSISTENCE_SET_PREPARE_COMMIT,
 	CM_LAST_COMMAND
 };
 
@@ -264,6 +214,7 @@ class CFileReader: public CStringTokenizer
 		std::string fr_inquire_next_command();
 
 		char** fr_read_string_array();
+		bool fr_read_exec_command( const char* line, std::string& command, bool& write_to_std, bool& write_to_out, bool& write_to_trc );
 
 		void fr_free_string_array(char** array);
 
@@ -281,6 +232,7 @@ class CFileReader: public CStringTokenizer
 
 };
 
+inline CFileReader* fr() { return CFileReader::fr_instance(); }
 }
 
 #endif // READER_H

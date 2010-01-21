@@ -8,15 +8,18 @@ Notes on intentions (see wiki for more):
   CppUnitExtension/
     - sources of developed extension
   Example/
-    - how to use cppunit with the extension
+    - how to use cppunit without and with the extension
 
 
 Start with project:
 1) create your own ssh keys
 2) create an account on github.com and provide your account with your public ssh key
    (let me know about your account name, I'll add you as a collaborator)
-3) run 'git clone git@github.com:mb78/CppUnitExtension.git; cd CppUnitExtension', you are in dev. directory
-4) run 'cmake .; make', you have project compiled and can 'cd Example && ./CppUnitExtensionExample'
+3) run 'git clone git@github.com:xsedlak/CppUnitExtension.git; cd CppUnitExtension', you are in dev. directory
+4) run 'cmake . &&  make', you have project compiled and can
+    4.1) 'cd Examples/Example1-ClassicCppUnitTest/' and run Test Cases for CppUnit 'example1-classiccppunit'
+    4.2) 'cd Examples/Example2-CppUnitTestWithExtension/' and run the Test Case './example2-cppunitwithextension -i tc/test.in -o tc/test.out'
+    4.3) 'cd Examples/Example2-CppUnitTestWithExtension/' and run Test Cases '../../ute/ute.sh -i' #will be implemented
 
 
 Your work should comprise:
@@ -37,5 +40,6 @@ Basic git commands:
 TODO:
   - let CppUnit/include/cppunit/config-auto.h be auto-created (now it's
     generated on kubuntu 9.10, might not match your env)
+  - cmake version 2.8.0 is needed
 
 # vim: ts=4 sw=4 et tw=0

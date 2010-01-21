@@ -1,0 +1,28 @@
+$ECHO START Test Case (TC) {{{
+$ECHO This TC tests the syntax of TC: $ECHO, $CALL, $STRING, $INT, $BOOL, $SLEEP, $EXEC
+$ECHO =================================================================================
+
+$CALL 1 BaseTest::test01
+$STRING abc
+$INT 123
+$BOOL true
+#Examples:
+#$BOOL (TRUE|false|FALSE)
+
+$SLEEP 1
+
+$EXEC "pwd",STD,OUT
+$EXEC "ls -la",STD
+#Examples:
+#$EXEC "pwd"
+#$EXEC "pwd",STD
+#$EXEC "pwd",OUT
+
+$ECHO =================================================================================
+
+$CALL 1 BaseTest::test02
+$INT 321
+$STRING xyz
+
+$ECHO }}} END TC
+$ECHO " vim:fdm=marker

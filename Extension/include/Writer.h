@@ -1,9 +1,9 @@
-#ifndef DUMMYTRACE_H
-#define DUMMYTRACE_H
+#ifndef WRITER_H
+#define WRITER_H
 
 #include <stdio.h>
-#include "DummyTraceC.h"
+#include <iostream>
 
-int dummy_trace (const char * event, int number_of_arguments, ...);
+std::ofstream output;
 
-#endif  // DUMMYTRACE_H
+#endif  // WRITER_H
