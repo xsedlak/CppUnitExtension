@@ -1,0 +1,5 @@
+test01(abc,123,1)
+$EXEC output: 
+	/home/arim/project/CppUnitExtension/Examples/Example2-CppUnitTestWithExtension
+	
+test02(xyz,321)
