@@ -5,6 +5,7 @@
 #include <fstream>
 #include <iostream>
 #include <list>
+#include <sys/time.h>
 
 namespace ute {
 
@@ -61,7 +62,7 @@ namespace ute {
 			int utr_vfprintf (FILE* file, const char * format, va_list ap);
 
 			void utr_increase_sim_time(int delta_sec, int delta_u_sec);
-			const struct timeval* utr_get_simulated_time(void);
+			const struct ::timeval* utr_get_simulated_time(void);
 			time_t utr_restore_simulated_time(char* date_and_time);
 
 			void utr_store_test_class(CTestClass* TestClass);

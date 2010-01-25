@@ -1,5 +1,8 @@
 #include "Reader.h"
 #include "UteTestRunner.h"
+#include <string.h>
+#include <stdlib.h>
+#include <stdarg.h>
 
 using namespace std;
 
